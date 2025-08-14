@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team - Memories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-animation:nth-child(even) {
+            animation-delay: -3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-glow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .card-glow:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .backdrop-blur {
+            backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .sparkle {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sparkle::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+
+        .sparkle:hover::before {
+            animation: sparkle 0.8s ease-in-out;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: particleFloat 8s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        @media (min-width: 1024px) {
+            .team-grid-uplift { transform: translateY(-18px); }
+        }
+
+        @media (max-width: 1023px) {
+            .team-grid-uplift { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body class="text-gray-800 overflow-x-hidden">
+    <div class="particles" id="particles"></div>
+
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <div class="text-center mb-8">
+            <div class="inline-block relative">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 floating-animation">
+                    MEMORIES ALBUM
+                </h1>
+                <div class="absolute -top-3 -right-3 w-6 h-6 bg-yellow-400 rounded-full opacity-80 floating-animation"></div>
+                <div class="absolute -bottom-1 -left-1 w-5 h-5 bg-pink-400 rounded-full opacity-60 floating-animation"></div>
+            </div>
+            <p class="text-base md:text-lg text-white/90 mt-2 font-light hidden md:block">Meet our amazing team of creative minds</p>
+            <div class="w-20 h-1 bg-gradient-to-r from-yellow-400 to-pink-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto team-grid-uplift">
+            
+            <div class="backdrop-blur rounded-3xl shadow-2xl overflow-hidden card-glow sparkle group">
+                <div class="relative overflow-hidden">
+                    <img class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110" src="image/Image3.png" alt="Member 1 Photo">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-8 text-center relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-4 h-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></div>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold gradient-text mb-1">ជឿន សុធារិទ្ធ</h3>
+                    <p class="text-gray-600 text-sm font-medium mb-1">Team Leader</p>
+                    <p class="text-gray-500 text-xs mb-6">Leading with passion and vision</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="social-icon text-gray-400 hover:text-blue-500" aria-label="facebook">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H8.46V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-black" aria-label="twitter">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="backdrop-blur rounded-3xl shadow-2xl overflow-hidden card-glow sparkle group">
+                <div class="relative overflow-hidden">
+                    <img class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110" src="image/Image1.png" alt="Member 2 Photo">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-8 text-center relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-4 h-4 bg-gradient-to-r from-pink-400 to-yellow-500 rounded-full"></div>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold gradient-text mb-1">ឆាយ សិរីវឌ្ឍនៈ</h3>
+                    <p class="text-gray-600 text-sm font-medium mb-1">The Creative Mind</p>
+                    <p class="text-gray-500 text-xs mb-6">Bringing ideas to life</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="social-icon text-gray-400 hover:text-blue-500" aria-label="facebook">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H8.46V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-black" aria-label="twitter">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="backdrop-blur rounded-3xl shadow-2xl overflow-hidden card-glow sparkle group">
+                <div class="relative overflow-hidden">
+                    <img class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110" src="image/Image2.png" alt="Member 3 Photo">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-8 text-center relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-4 h-4 bg-gradient-to-r from-green-400 to-blue-500 rounded-full"></div>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold gradient-text mb-1">ប៊ុត ស៊ីវិឡា</h3>
+                    <p class="text-gray-600 text-sm font-medium mb-1">Marketing Expert</p>
+                    <p class="text-gray-500 text-xs mb-6">Connecting brands with hearts</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="social-icon text-gray-400 hover:text-blue-500" aria-label="facebook">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H8.46V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-black" aria-label="twitter">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="backdrop-blur rounded-3xl shadow-2xl overflow-hidden card-glow sparkle group">
+                <div class="relative overflow-hidden">
+                    <img class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110" src="image/Image4.png" alt="Member 4 Photo">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-8 text-center relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-4 h-4 bg-gradient-to-r from-purple-400 to-red-500 rounded-full"></div>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold gradient-text mb-1">ឆឹង ប៊ូសឡេង</h3>
+                    <p class="text-gray-600 text-sm font-medium mb-1">Technical Support</p>
+                    <p class="text-gray-500 text-xs mb-6">Solving problems with precision</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="social-icon text-gray-400 hover:text-blue-500" aria-label="facebook">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H8.46V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-black" aria-label="twitter">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="text-center mt-12">
+            <div class="backdrop-blur rounded-2xl p-8 max-w-2xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Together We Create Magic ✨</h2>
+                <p class="text-white/90 text-base md:text-lg">Our diverse team brings unique perspectives and skills to every project, creating unforgettable experiences and lasting memories.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+
+            const size = Math.random() * 4 + 2;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
+
+            document.getElementById('particles').appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 18000);
+        }
+
+        // Create particles continuously
+        setInterval(createParticle, 300);
+
+        // Create initial batch of particles
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createParticle, i * 200);
+        }
+    </script>
+</body>
+</html>
